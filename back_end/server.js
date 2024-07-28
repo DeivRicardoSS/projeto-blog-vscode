@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 //porta
+const port = 3000;
 
 //importação do mongoose
 const mongoose = require('mongoose');
@@ -12,7 +13,9 @@ mongoose.connect("mongodb://localhost:<porta>/<banco>").then(() => {
     console.log(err);
 })
 
-const port = 3000;
+const cadastro = require('./rotas/cadastro');
+
+app.use('/cadastro', cadastro);
 
 
 
