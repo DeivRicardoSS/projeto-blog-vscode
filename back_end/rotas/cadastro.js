@@ -31,6 +31,13 @@ const sistema = {
     }
 }
 
+router.get('/img/:id', (req, res) => {
+    const id = req.params.id;
+
+    res.sendFile('../images/profile/' + id + '.png', {root: __dirname});
+    
+});
+
 const user_area = new mongoose.Schema({
     section_id: {
         type: String,
@@ -47,6 +54,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    foto: {
+        type: String,
+        required: true
+    }
     email: {
         type: String,
         required: true
@@ -80,6 +91,7 @@ router.push('/', (req, res) => {
 
     const user = new User({
         nome: body.nome,
+        foto: "http://localhost:3000/cadastro/img/default",
         email: body.email,
         nascimento: body.nascimento,
         permissoes: ["perm1"],
