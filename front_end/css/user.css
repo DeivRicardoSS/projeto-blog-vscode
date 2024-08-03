@@ -1,0 +1,25 @@
+.user-profile{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+
+    align-items: center;
+    background-color: #e8e8e8;
+
+    z-index: 1;
+}
+.user-profile div{
+    margin-left: 15px;
+}
+
+.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.user-bio{
+    padding: 20px;
+    box-shadow: 0px 8px 10px 0px #0000002d;
+    z-index: 0;
+}

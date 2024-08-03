@@ -57,7 +57,7 @@ const UserSchema = new mongoose.Schema({
     foto: {
         type: String,
         required: true
-    }
+    },
     email: {
         type: String,
         required: true

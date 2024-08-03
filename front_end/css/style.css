@@ -1,32 +1,53 @@
+@font-face {
+    font-family: 'Cocomat';
+    src: url('cocomat-pro-regular.ttf') format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: 'Cocomat', sans-serif;
 }
 
 body{
     background-color: #e8e8e8;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 100vw;
+
+    overflow-x: hidden;
 }
 
 .active{
     border-bottom: 2px solid #cd8500;
+    transition: 0.5s;
 }
 
 header{
     width: 100%;
     height: 4rem;
 
-    background-color: #d6d6d6;
+    background-color: #e2e2e2;
 
     display: flex;
     align-items: center;
 
     justify-content: space-between;
+    box-shadow: 0px 0px 20px 0px #00000046;
+
+    position: fixed;
+    top: 0;
+}
+
+.logo{
+    height: 60%;
+    margin-left: 10px;
 }
 
 .burguer{
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .theme{
@@ -40,7 +61,7 @@ header i{
 
 main{
     width: 100%;
-
+    padding: 20px;
 }
 
 nav{
@@ -98,4 +119,27 @@ nav i{
 
 .top3{
     background-color: green;
+}
+
+.perfis{
+    height: 80px;
+    width: 100%;
+    overflow-x: scroll;
+    
+    display: flex;
+}
+
+.perfis img{
+    height: 90%;
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.top-assuntos{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+
+    width: 100%;
+    flex-direction: row;
 }
