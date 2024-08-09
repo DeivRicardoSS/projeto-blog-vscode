@@ -22,6 +22,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 import cadastro from './routes/cadastro.mjs';
 app.use('/cadastro', cadastro);
 
+import login from './routes/login.mjs';
+app.use('/login', login);
+
 
 
 
