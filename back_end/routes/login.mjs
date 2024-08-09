@@ -16,7 +16,11 @@ async function getUser(User, email, password, res) {
     }
 
     if (user.password === password) {
-        return res.json(user);
+        return res.json({
+            email: user.email,
+            section_id: user.section_id,
+            logado: true
+        });
     }
 }
 
