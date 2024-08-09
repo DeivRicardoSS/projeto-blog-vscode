@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
 const sistema = {
     newSectionId(){
@@ -58,6 +59,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    data_criacao: {
+        type: Date,
+        required: true
+    },
     email: {
         type: String,
         required: true
@@ -79,7 +84,7 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model('User', UserSchema);
 
 //pega valores do body
-router.push('/', (req, res) => {
+router.post('/', (req, res) => {
     const body = req.body;
 
     let section_id = sistema.newSectionId();
@@ -92,6 +97,7 @@ router.push('/', (req, res) => {
     const user = new User({
         nome: body.nome,
         foto: "http://localhost:3000/cadastro/img/default",
+        data_criacao: body.data_criacao,
         email: body.email,
         nascimento: body.nascimento,
         permissoes: ["perm1"],
