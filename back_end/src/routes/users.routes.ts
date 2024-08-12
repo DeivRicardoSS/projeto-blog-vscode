@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import users from '../controllers/users.controllers';
+import Users from '../controllers/users.controllers';
 
 const router = Router();
 
-router.post('/cadastro', users.cadastro);
+router.post('/cadastro', Users.cadastro);
 
 export default router;
