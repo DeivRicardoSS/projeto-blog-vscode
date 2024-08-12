@@ -1,4 +1,4 @@
-const sistema = {
+const Calc = {
     random(min, max){
         //retornar numero inteiro entre o mínimo e o maximo
 
@@ -42,4 +42,4 @@ const sistema = {
     }
 }
 
-export default sistema;
+export default Calc;
