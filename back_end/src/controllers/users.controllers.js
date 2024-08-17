@@ -1,19 +1,19 @@
 import mongoose from 'mongoose';
 
-import Calc from '../core/calc.core'
-import UserSchema from '../database/users.database';
+import Calc from '../core/calc.core.js'
+import UserSchema from '../database/users.database.js';
 
 const Users = {
-    cadastro: (req, res) => {
-        const { nome, email, nascimento, password } = req.body;
+    cadastro(req, res){
+        const body = req.body;
 
-        if(!nome || !email || !nascimento || !password){
+        if(!body.nome || !body.email || !body.nascimento || !body.password){
             return res.status(400).json({ 
                 msg: 'Todos os campos precisam ser preenchidos!',
-                nome: nome,
-                email: email,
-                nascimento: nascimento,
-                password: password
+                nome: body.nome,
+                email: body.email,
+                nascimento: body.nascimento,
+                password: body.password
             });
         }
 
@@ -23,23 +23,23 @@ const Users = {
         
 
         const NewUser = new User({
-            nome: nome,
+            nome: body.nome,
             foto: "http://localhost:3000/cadastro/img/default",
             data_criacao: Date.now(),
-            email: email,
-            nascimento: nascimento,
+            email: body.email,
+            nascimento: body.nascimento,
             permissoes: ["perm1"],
             user_area: {
                 section_id: section_id,
-                password: password
+                password: body.password
             }
             
         });
 
         NewUser.save().then(() => {
-            res.send(NewUser);
+            return res.send(NewUser);
         }).catch((err) => {
-            res.send(err);
+            return res.send(err);
         });
     }
 }
