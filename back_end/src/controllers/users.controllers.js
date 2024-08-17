@@ -41,6 +41,29 @@ const Users = {
         }).catch((err) => {
             return res.send(err);
         });
+    },
+    login(req, res){
+        const body = req.body;
+
+        if(!body.email || !body.password){
+            return res.status(400).json({ 
+                msg: 'Todos os campos precisam ser preenchidos!',
+                email: body.email,
+                password: body.password
+            });
+        }
+
+        UserSchema.findOne({email: body.email, password: body.password}).then((user) => {
+            if(!user){
+                return res.status(400).json({ msg: 'Email ou senha inválidos!' });
+            }
+
+            return res.send(user);
+            
+        }).catch((err) => {
+            return res.send(err);
+        });
+
     }
 }
 
