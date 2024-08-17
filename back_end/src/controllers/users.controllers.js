@@ -2,9 +2,11 @@ import mongoose from 'mongoose';
 
 import Calc from '../core/calc.core.js'
 import UserSchema from '../database/users.database.js';
+const User = mongoose.model('User', UserSchema);
 
 const Users = {
     cadastro(req, res){
+        
         const body = req.body;
 
         if(!body.nome || !body.email || !body.nascimento || !body.password){
@@ -17,7 +19,7 @@ const Users = {
             });
         }
 
-        const User = mongoose.model('User', UserSchema);
+        
 
         let section_id = Calc.newSectionId();
         
@@ -53,16 +55,24 @@ const Users = {
             });
         }
 
-        UserSchema.findOne({email: body.email, password: body.password}).then((user) => {
+        let user = User.findOne({email: body.email},).then((user)=>{
             if(!user){
                 return res.status(400).json({ msg: 'Email ou senha inválidos!' });
             }
 
-            return res.send(user);
-            
+            if(user.user_area.password !== body.password){
+                return res.status(400).json({ msg: 'Email ou senha inválidos!' });
+            }
+
+            return res.send({
+                status: 200,
+                user: user
+            });
         }).catch((err) => {
-            return res.send(err);
+            return res.send("Erro: " + err);
         });
+
+        
 
     }
 }
