@@ -9,8 +9,8 @@
     "tsx": "^4.17.0"
   },
   "scripts": {
-    "start-server": "tsx watch back_end/src/server.ts",
-    "start-js": "node --watch back_end/src/server.js"
+    "start-back": "node --watch back_end/src/server.js",
+    "start-front": "node --watch front_end/src/server.js"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"
