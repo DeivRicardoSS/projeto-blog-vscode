@@ -66,7 +66,7 @@ const Users = {
 
             return res.send({
                 status: 200,
-                user: user
+                user: user.user_area.section_id
             });
         }).catch((err) => {
             return res.send("Erro: " + err);
@@ -74,6 +74,19 @@ const Users = {
 
         
 
+    },
+    user_section(req, res){
+        const section = req.params.id;
+
+        let user = User.findOne({'user_area.section_id': section}).then((user)=>{
+            return res.send({
+                status: 200,
+                user: user,
+                id: section
+            });
+        }).catch((err) => {
+            return res.send("Erro: " + err);
+        });
     }
 }
 
