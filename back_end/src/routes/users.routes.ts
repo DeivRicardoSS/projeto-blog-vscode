@@ -1,7 +1,7 @@
 import {Router} from 'express';
-import Users from '../controllers/users.controllers.js';
+import Users from '../controllers/users.controllers.ts';
 
-const users = Router();
+const users:any = Router();
 
 // Importação das Rotas
 

@@ -1,4 +1,4 @@
-const Calc = {
+const Calc:any = {
     random(min, max){
         //retornar numero inteiro entre o mínimo e o maximo
 

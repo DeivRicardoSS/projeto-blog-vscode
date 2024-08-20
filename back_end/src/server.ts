@@ -1,10 +1,10 @@
 import express from 'express';
-import router from './routes/routes.js';
+import router from './routes/routes.ts';
 import json from 'body-parser';
 import mongoose from 'mongoose';
 
 
-const app = express();
+const app:any = express();
 app.use(express.json())
 
 mongoose.connect('mongodb://localhost:27017/blog');

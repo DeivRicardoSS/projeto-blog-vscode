@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
-import Calc from '../core/calc.core.js'
-import UserSchema from '../database/users.database.js';
+import Calc from '../core/calc.core.ts'
+import UserSchema from '../database/users.database.ts';
 const User = mongoose.model('User', UserSchema);
 
 const Users = {
