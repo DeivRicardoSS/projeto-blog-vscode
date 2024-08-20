@@ -14,3 +14,4 @@ O projeto se trata de um sistema de blog, onde criadores de conteúdo podem post
 ![MongoDB](https://img.shields.io/badge/MongoDB-16141f?style=for-the-badge&logo=mongodb) 
 ![mongoose](https://img.shields.io/badge/mongoose-16141f?style=for-the-badge&logo=mongoose) 
 ![Axios](https://img.shields.io/badge/Axios-16141f?style=for-the-badge&logo=axios) 
+![TypeScript](https://img.shields.io/badge/typescript-16141f?style=for-the-badge&logo=typescript) 
