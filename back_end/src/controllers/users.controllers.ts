@@ -1,14 +1,18 @@
+// Importações
 import mongoose from 'mongoose';
-
 import Calc from '../core/calc.core.ts'
 import UserSchema from '../database/users.database.ts';
+
+// Definindo Coleção de Usuários
 const User = mongoose.model('User', UserSchema);
 
+// Declarando Controles de Usuário
 const Users = {
     cadastro(req, res){
         
         const body = req.body;
-
+        
+        // Caso alguma entrada esteja vazia ou não exista
         if(!body.nome || !body.email || !body.nascimento || !body.password){
             return res.status(400).json({ 
                 msg: 'Todos os campos precisam ser preenchidos!',
@@ -20,7 +24,7 @@ const Users = {
         }
 
         
-
+        // Criando um id de sessão de usuário
         let section_id = Calc.newSectionId();
         
 
@@ -90,4 +94,5 @@ const Users = {
     }
 }
 
+// Exporta Controles de Usuário
 export default Users;

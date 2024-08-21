@@ -1,6 +1,8 @@
+// Importações
 import {Router} from 'express';
 import Users from '../controllers/users.controllers.ts';
 
+// Iniciando
 const users:any = Router();
 
 // Importação das Rotas

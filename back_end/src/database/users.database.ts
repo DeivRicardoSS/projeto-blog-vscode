@@ -1,6 +1,7 @@
+// Importações
 import mongoose from 'mongoose';
 
-
+// Criando Schema da area do usuário
 const UserArea = new mongoose.Schema({
     section_id: {
         type: String,
@@ -12,6 +13,7 @@ const UserArea = new mongoose.Schema({
     }
 });
 
+// Criando Schema do Usuário
 const UserSchema = new mongoose.Schema({
     nome: {
         type: String,
@@ -45,5 +47,5 @@ const UserSchema = new mongoose.Schema({
 });
 
 
-//const User = mongoose.model('User', UserSchema);
+// Exportando Schema de Usuário
 export default UserSchema;
