@@ -1,6 +1,8 @@
 // Importações
 import {Router} from 'express';
-import Users from '../controllers/users.controllers.ts';
+import section from '../controllers/section.controllers.ts';
+import cadastro from '../controllers/cadastro.controllers.ts';
+import login from '../controllers/login.controllers.ts';
 
 // Iniciando
 const users:any = Router();
@@ -8,12 +10,12 @@ const users:any = Router();
 // Importação das Rotas
 
 // Rota de Cadastro
-users.post('/cadastro', (req, res) => {Users.cadastro(req, res)});
+users.post('/cadastro', cadastro);
 
 // Rota de Login
-users.post('/login', (req, res) => {Users.login(req, res)});
+users.post('/login', login);
 
 // Rota da Sessão do usuário
-users.get('/section/:id', (req, res) => {Users.user_section(req, res)});
+users.get('/section/:id', section);
 
 export default users;
