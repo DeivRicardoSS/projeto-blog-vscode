@@ -6,12 +6,17 @@ const RespostaSchema = new mongoose.Schema({
         required: true
     },
     id_pai: {
-        
+        type: String,
+        required: true
     },
     id_dono: {
-
+        type: String,
+        required: true
     },
     conteudo: {
-
+        type: String,
+        required: true
     }
 })
+
+export default RespostaSchema;
