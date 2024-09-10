@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import postSchema from '../database/posts.database';
 import PostSchema from '../database/posts.database';
 
 const Post = mongoose.model('Post', PostSchema);
@@ -16,7 +15,7 @@ export default function newPost(req, res){
     let conteudo:string = body.conteudo;
     let categorias:[string] = body.categorias;
 
-    if(!id, !id_dono, !cor, !titulo, !subtitulo, !conteudo, !categorias){
+    if(!id || !id_dono || !cor || !titulo || !subtitulo || !conteudo || !categorias){
         return res.status(400).json({
             msg: 'Todos os campos precisam ser preenchidos!'
         });
